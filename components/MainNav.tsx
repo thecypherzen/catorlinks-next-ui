@@ -10,14 +10,15 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Sun } from "lucide-react";
 
 export default function MainNav() {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <PageWrapper>
-      <nav className="flex justify-between text-background">
-        <div className="flex gap-6 border-1 border-neutral-500">
+    <PageWrapper className="h-12 flex flex-col justify-center">
+      <nav className="flex justify-between text-foreground">
+        {/* Left Nav Set */}
+        <div className="flex items-center gap-6">
           {/* Logo */}
           <div className="">
             <Image
@@ -29,13 +30,16 @@ export default function MainNav() {
             />
           </div>
           {/* Avatar */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <Avatar className="size-7">
               <AvatarFallback className="bg-neutral-500"></AvatarFallback>
             </Avatar>
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
-                <Button variant="ghost" className="hover:bg-transparent">
+                <Button
+                  variant="ghost"
+                  className="hover:bg-transparent hover:text-neutral-400"
+                >
                   <span>someusername</span>
                   {open ? <ChevronUp /> : <ChevronDown />}
                 </Button>
@@ -48,7 +52,17 @@ export default function MainNav() {
             </Popover>
           </div>
         </div>
-        <div></div>
+        {/* Right Nav Set - Utility Buttons */}
+        <div className="flex gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hover:bg-foreground/20 rounded-full bg-foreground/10"
+          >
+            <span className="sr-only"> Toggle theme </span>
+            <Sun className="text-foreground" />
+          </Button>
+        </div>
       </nav>
     </PageWrapper>
   );
