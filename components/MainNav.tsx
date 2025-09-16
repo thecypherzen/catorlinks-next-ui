@@ -9,11 +9,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Sun } from "lucide-react";
+import { UseTheme } from "@/hooks/UseTheme";
 
 export default function MainNav() {
   const [open, setOpen] = useState<boolean>(false);
+  const { theme, toggleTheme } = UseTheme();
+
+  useEffect(() => {}, [theme]);
+
   return (
     <PageWrapper className="h-12 flex flex-col justify-center">
       <nav className="flex justify-between text-foreground">
@@ -26,7 +31,7 @@ export default function MainNav() {
               width={18}
               height={20}
               alt="Logo"
-              className="invert"
+              className={theme === "dark" ? "invert" : ""}
             />
           </div>
           {/* Avatar */}
@@ -58,6 +63,9 @@ export default function MainNav() {
             variant="ghost"
             size="icon"
             className="hover:bg-foreground/20 rounded-full bg-foreground/10"
+            onClick={() => {
+              toggleTheme();
+            }}
           >
             <span className="sr-only"> Toggle theme </span>
             <Sun className="text-foreground" />
