@@ -29,8 +29,8 @@ export default function MainNav() {
 
   useEffect(() => {}, [theme]);
   return (
-    <PageWrapper className="h-12 flex flex-col justify-center">
-      <nav className="flex justify-between text-foreground">
+    <PageWrapper className="h-12 flex flex-col justify-center sticky top-0 bg-background/80 backdrop-blur-2xl z-50 backdrop-opacity-80 transform-3d translate-z-0">
+      <nav className="flex justify-between text-foreground ">
         {/* Left Nav Set */}
         <div className="flex items-center gap-6">
           {/* Logo */}
@@ -83,7 +83,7 @@ export default function MainNav() {
           </div>
         </div>
         {/* Right Nav Set - Utility Buttons */}
-        <div className="flex gap-3 justify-center items-center">
+        <div className="flex gap-2 justify-center items-center">
           {/* Nav Buttons */}
           <Button className="flex justify-center items-center gap-2 text-xs font-medium p-1 bg-foreground/5 hover:bg-foreground/10 text-foreground/80 rounded-xl">
             <Images size="16px" />
