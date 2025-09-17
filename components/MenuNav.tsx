@@ -30,10 +30,10 @@ export default function MenuNav() {
         <div
           key={i}
           className={cn(
-            "rounded-lg px-3 py-2 text-neutral-700 transition-all duration-200",
+            "rounded-lg px-3 py-2 text-neutral-700 dark:text-neutral-200 transition-all duration-200",
             active === item.name
-              ? "bg-white dark:bg-foreground/80 hover:scale-[1.1]"
-              : "hover:bg-neutral-200"
+              ? "bg-white dark:bg-foreground/80 text-neutral-800 dark:text-neutral-800 hover:scale-[1.1]"
+              : "hover:bg-neutral-200 dark:hover:bg-foreground/30"
           )}
           onClick={() => setActive(() => item.name)}
         >
