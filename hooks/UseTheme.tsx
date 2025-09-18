@@ -7,7 +7,7 @@ export const ThemeContext = createContext<ThemeContextType>({
   toggleTheme: () => {},
 });
 
-const defaultTheme = window.matchMedia("prefers-color-scheme: dark").matches
+const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
   ? "dark"
   : "light";
 
@@ -24,7 +24,9 @@ export const ThemeProvider = ({
   };
 
   useEffect(() => {
-    const detected = defaultTheme;
+    const detected =
+      (window.localStorage.getItem(storeKey) as ThemeType | null) ||
+      defaultTheme;
     setTheme(detected);
   }, []);
 
