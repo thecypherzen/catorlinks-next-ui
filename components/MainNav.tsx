@@ -29,7 +29,7 @@ export default function MainNav() {
 
   useEffect(() => {}, [theme]);
   return (
-    <PageWrapper className="h-12 flex flex-col justify-center sticky top-0 bg-background/80 backdrop-blur-2xl z-50 backdrop-opacity-80 transform-3d translate-z-0">
+    <PageWrapper className="h-12 flex flex-col justify-center bg-background/70 sticky top-0 backdrop-blur-3xl z-50 backdrop-opacity-100 transform-3d translate-z-0">
       <nav className="flex justify-between text-foreground ">
         {/* Left Nav Set */}
         <div className="flex items-center gap-6">

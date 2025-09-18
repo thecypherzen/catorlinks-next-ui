@@ -153,7 +153,7 @@ function CarouselDots({ className, ...props }: React.ComponentProps<"div">) {
         <div
           key={`carousel-dot-for-${index}`}
           className={cn(
-            "size-2 rounded-full",
+            "size-2 rounded-full cursor-pointer",
             currentSlide === index
               ? "bg-foreground/70 dark:bg-foreground/90"
               : "bg-foreground/10 dark:bg-foreground/20"

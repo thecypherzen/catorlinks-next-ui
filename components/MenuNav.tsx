@@ -25,7 +25,7 @@ export default function MenuNav() {
   const [active, setActive] = useState<string | undefined>(undefined);
 
   return (
-    <div className="max-w-[370px] m-auto overflow-x-auto flex justify-center items-center gap-2 p-1 rounded-xl sticky top-2 -mt-10 bg-foreground/5 z-60 dark:bg-foreground/10">
+    <div className="max-w-[370px] m-auto overflow-x-auto flex justify-center items-center gap-2 p-1 rounded-xl sticky top-2 -mt-10 bg-foreground/5 z-60 dark:bg-foreground/10 backdrop-blur-3xl">
       {navItems.map((item, i) => (
         <div
           key={i}
