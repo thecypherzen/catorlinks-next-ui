@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utility {
+  .nav-icon-mobile {
+    @apply bg-neutral-700 dark:bg-neutral-900 text-neutral-100 dark:text-foreground/90 p-2 flex flex-col items-center justify-center rounded-full;
+  }
+  .nav-icon-desktop {
+    @apply hover:bg-foreground/10 bg-foreground/5 p-1;
+  }
+  .mobile-section-header {
+    @apply text-neutral-500/50 dark:text-foreground/40;
+  }
+}
