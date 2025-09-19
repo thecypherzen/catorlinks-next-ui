@@ -17,7 +17,7 @@ export default function MainCarousel() {
   const data = getCarouselData();
 
   return (
-    <Carousel className="w-95/100">
+    <Carousel className="w-full">
       <CarouselContent className="-ml-1 w-full gap-5">
         {data.map((entry, idx) => {
           return (
