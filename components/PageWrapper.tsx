@@ -8,7 +8,12 @@ export default function PageWrapper({
   className?: string;
 }) {
   return (
-    <div className={cn("w-full max-w-[1400px] px-6 bg-transparent", className)}>
+    <div
+      className={cn(
+        "w-full max-w-[1400px] m-auto px-6 bg-transparent",
+        className
+      )}
+    >
       {children}
     </div>
   );
