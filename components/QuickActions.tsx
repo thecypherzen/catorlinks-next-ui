@@ -58,7 +58,7 @@ export function QuickActionsSection() {
         </AppSectionControl>
       </AppSectionHeader>
       {/* Quick Actions */}
-      <AppSectionContent className="grid grid-cols-4 gap-2">
+      <AppSectionContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
         {actions
           .slice(0, visibleActions < size ? visibleActions : undefined)
           .map((action, index) => {
