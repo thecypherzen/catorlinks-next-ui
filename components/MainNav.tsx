@@ -77,7 +77,7 @@ export default function MainNav() {
                 <SheetTrigger className="p-1 active:bg-neutral-300 dark:bg-neutral-900 rounded-sm">
                   <Menu strokeWidth="2px" className="text-xl" spacing="2px" />
                 </SheetTrigger>
-                <SheetContent className="gap-0 !w-3/7 border-1">
+                <SheetContent className="gap-0 border-1">
                   <SheetHeader className="shadow-lg shadow-neutral-200/50 border-b-[0.3px] border-b-neutral-100/30 dark:border-b-neutral-600/30 dark:shadow-neutral-900/60 translate-3d translate-z-0">
                     <SheetTitle className="flex py-4  divide-x-1 divide-foreground/60 gap-3 items-center">
                       <div className="pr-3">

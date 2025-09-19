@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 export function Footer() {
   return (
     <footer className="bg-neutral-950 dark:bg-neutral-900 text-neutral-100 dark:text-neutral-300">
-      <PageWrapper className="flex items-center gap-4 justify-between py-5 min-h-[18vh]">
+      <PageWrapper className="flex items-center gap-4 justify-between px-3 py-5 min-h-[18vh]">
         <div className="flex items-center gap-2">
           <div className="flex flex-col items-center justify-center h-full bg-neutral-800/80 dark:bg-neutral-950 rounded-md aspect-square p-3">
             <Logo invert />

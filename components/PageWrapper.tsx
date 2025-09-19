@@ -12,7 +12,7 @@ export default function PageWrapper({
   return (
     <div
       className={cn(
-        "w-full max-w-[1400px] m-auto p-2 md:px-4 lg:px-6 bg-transparent",
+        "w-full max-w-[1400px] m-auto py-2 px-3 md:px-4 lg:px-6 bg-transparent",
         className
       )}
     >

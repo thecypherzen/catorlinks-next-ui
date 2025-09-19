@@ -64,7 +64,7 @@ export function QuickActionsSection() {
       {/* Quick Actions */}
       <AppSectionContent
         className={cn(
-          "grid gap-2",
+          "grid gap-2 max-h-[80svh] overflow-y-auto pb-6 pt-2",
           useTwoGridCols
             ? "grid-cols-1"
             : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"

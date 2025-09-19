@@ -131,4 +131,10 @@
   .mobile-section-header {
     @apply text-neutral-500/50 dark:text-foreground/40;
   }
+  .scrollbar-hidden {
+    scrollbar-width: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
