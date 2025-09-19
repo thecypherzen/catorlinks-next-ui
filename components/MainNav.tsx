@@ -15,6 +15,7 @@ import {
   ChevronUp,
   Headset,
   Images,
+  Menu,
   Moon,
   Sun,
 } from "lucide-react";
@@ -22,30 +23,52 @@ import { UseTheme } from "@/hooks/UseTheme";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { UseIsBreakpoint } from "@/hooks/UseIsBreakpoint";
+import { Sheet, SheetTrigger } from "./ui/sheet";
+import MenuNav from "./MenuNav";
 
 export default function MainNav() {
   const { theme } = UseTheme();
-  const isMobile = UseIsBreakpoint();
+  const isMobile = UseIsBreakpoint(932);
 
   useEffect(() => {}, [theme]);
   return (
-    <nav className="flex flex-col justify-center bg-background/70 sticky top-0 backdrop-blur-3xl z-50 backdrop-opacity-100 transform-3d translate-z-0 py-3">
+    <nav className="flex flex-col justify-center bg-background/70 sticky top-0 backdrop-blur-3xl z-50 backdrop-opacity-100 py-2 lg:py-3">
       <PageWrapper className="h-full">
         <div className="flex justify-between text-foreground">
-          {/* Left Nav Set */}
-          <div className="flex items-center gap-6">
-            {/* Logo */}
-            <Logo />
-            {/* Avatar */}
-            <CurrentUser />
-          </div>
-          {/* Right Nav Set - Utility Buttons */}
-          <div className="flex gap-2 justify-center items-center">
-            <QuickNavButtons />
-            <NotificationAlert />
-            <ThemeToggle />
-            <AvatarPlaceholder />
-          </div>
+          {!isMobile ? (
+            <>
+              {/* Left Nav Set */}
+              <div className="flex items-center gap-6">
+                {/* Logo */}
+                <Logo />
+                {/* Avatar */}
+                <CurrentUser />
+              </div>
+              <div className="flex-1 translate-3d translate-z-0">
+                <MenuNav />
+              </div>
+              {/* Right Nav Set - Utility Buttons */}
+              <div className="flex gap-2 justify-center items-center">
+                <QuickNavButtons />
+                <NotificationAlert />
+                <ThemeToggle />
+                <AvatarPlaceholder />
+              </div>
+            </>
+          ) : (
+            <>
+              <Logo />
+              {/* Sheet Trigger */}
+              <div className="flex-1 translate-3d translate-z-0">
+                <MenuNav />
+              </div>
+              <Sheet>
+                <SheetTrigger className="p-1 active:bg-neutral-300 dark:bg-neutral-900 rounded-sm">
+                  <Menu strokeWidth="2px" className="text-xl" spacing="2px" />
+                </SheetTrigger>
+              </Sheet>
+            </>
+          )}
         </div>
       </PageWrapper>
     </nav>
@@ -137,7 +160,7 @@ function NotificationAlert() {
 
 function QuickNavButtons() {
   return (
-    <>
+    <div className="flex gap-2 items-cener justify-center">
       <Button className="flex justify-center items-center gap-2 text-xs font-medium p-1 bg-foreground/5 hover:bg-foreground/10 text-foreground/80 rounded-xl">
         <Images size="16px" />
         <span>Gallery</span>
@@ -146,7 +169,7 @@ function QuickNavButtons() {
         <Headset size="16px" />
         <span>Support</span>
       </Button>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { UseIsBreakpoint } from "@/hooks/UseIsBreakpoint";
 import { cn } from "@/lib/utils";
 import {
   DraftingCompass,
@@ -10,7 +11,7 @@ import {
   Video,
   WandSparkles,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { icon: House, name: "house" },
@@ -23,9 +24,16 @@ const navItems = [
 ];
 export default function MenuNav() {
   const [active, setActive] = useState<string | undefined>(undefined);
+  const isMobileView = UseIsBreakpoint(932);
 
+  useEffect(() => {}, [isMobileView]);
   return (
-    <div className="max-w-[370px] m-auto overflow-x-auto flex justify-center items-center gap-2 p-1 rounded-xl sticky top-2 -mt-10 bg-foreground/5 z-60 dark:bg-foreground/10 backdrop-blur-3xl">
+    <div
+      className={cn(
+        "w-3/4 sm:max-w-6/11 md:max-w-[370px] left-1/7 sm:left-1/5 lg:left-1/8 xl:left-1/4 overflow-x-auto flex items-center gap-1 md:gap-2 px-3 py-2 rounded-xl fixed -top-2 backdrop-blur-3xl backdrop-opacity-50 bg-linear-to-b from-transparent via-90% to-neutral-100 dark:to-neutral-800",
+        isMobileView ? "md:left-1/4" : "md:left-1/6"
+      )}
+    >
       {navItems.map((item, i) => (
         <div
           key={i}

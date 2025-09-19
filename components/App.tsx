@@ -9,7 +9,6 @@ export function App({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <MainNav />
-      <MenuNav />
       {children}
       <Footer />
     </ThemeProvider>
