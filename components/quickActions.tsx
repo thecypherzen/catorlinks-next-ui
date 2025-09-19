@@ -11,65 +11,84 @@ import {
   WandSparkles,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export function QuickActions() {
   const [open, setOpen] = useState<boolean>(false);
+  const initCount = 4;
+  const [visibleActions, setVisibleActions] = useState<number>(initCount);
   const { data: actions, backgrounds: bgs } = getQAData();
+  const size = actions.length;
+
+  useEffect(() => {
+    if (open) {
+      setVisibleActions(size);
+    } else {
+      setVisibleActions(initCount);
+    }
+  }, [open]);
+
+  useEffect(() => {}, [visibleActions]);
+
   return (
-    <div className="space-y-5 py-5">
+    <div className="space-y-5 py-5 transition-discrete duration-1000">
       {/* Controls */}
       <div className="flex justify-between">
         <h3 className="font-bold text-xl">Generate</h3>
         <Button
           variant="outline"
-          className="bg-transparent hover:bg-transparent border-none shadow-none flex gap-1 items-center text-blue-500 dark:text-blue-600"
+          className="bg-transparent hover:bg-transparent border-none shadow-none flex gap-1 items-center text-blue-500 dark:text-blue-600 transition-all duration-300"
+          onClick={() => {
+            setOpen((prev) => !prev);
+          }}
         >
           {open ? <ChevronUp /> : <ChevronDown />}
           &nbsp;Show&nbsp;
-          {open ? "all" : "less"}
+          {open ? "less" : "all"}
         </Button>
       </div>
       {/* Quick Actions */}
       <div className="grid grid-cols-4 gap-2">
-        {actions.map((action, index) => {
-          return (
-            <div
-              className="flex items-center justify-between gap-2 p-2 w-full"
-              key={`qa-item-${index}`}
-            >
-              <div className="w-5/6 flex gap-2 items-center h-full">
-                <div
-                  className={cn(
-                    "bg-linear-to-b from-slate-700 to-slate-300 rounded-lg h-4/5 aspect-square flex flex-col items-center justify-center text-white",
-                    bgs[index]
-                  )}
-                >
-                  <action.icon strokeWidth="2px" className="p-0" />
-                </div>
-                <div>
-                  <div className="flex gap-2 items-center">
-                    <h4 className="font-semibold text-md">{action.name}</h4>
-                    {action.isNew && (
-                      <span className="px-2 h-[20px] text-[12px] rounded-full inline-flex flex-col justify-center items-center bg-blue-500 text-white font-medium">
-                        New
-                      </span>
+        {actions
+          .slice(0, visibleActions < size ? visibleActions : undefined)
+          .map((action, index) => {
+            return (
+              <div
+                className="flex items-center justify-between gap-2 p-2 w-full"
+                key={`qa-item-${index}`}
+              >
+                <div className="w-5/6 flex gap-2 items-center h-full">
+                  <div
+                    className={cn(
+                      "bg-linear-to-b from-slate-700 to-slate-300 rounded-lg h-4/5 aspect-square flex flex-col items-center justify-center text-white",
+                      bgs[index]
                     )}
+                  >
+                    <action.icon strokeWidth="2px" className="p-0" />
                   </div>
-                  <p className="text-xs text-foreground/60 line-clamp-2">
-                    {action.description}
-                  </p>
+                  <div>
+                    <div className="flex gap-2 items-center">
+                      <h4 className="font-semibold text-md">{action.name}</h4>
+                      {action.isNew && (
+                        <span className="px-2 h-[20px] text-[12px] rounded-full inline-flex flex-col justify-center items-center bg-blue-500 text-white font-medium">
+                          New
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-foreground/60 line-clamp-2">
+                      {action.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="w-1/6">
+                  <span className="bg-neutral-100 text-neutral-900 rounded-full text-xs px-3 py-1 inline-block hover:bg-neutral-300 hover:scale-[1.05] cursor-pointer transition-scale duration-200">
+                    Open
+                  </span>
                 </div>
               </div>
-              <div className="w-1/6">
-                <span className="bg-neutral-100 text-neutral-900 rounded-full text-xs px-3 py-1 inline-block">
-                  Open
-                </span>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

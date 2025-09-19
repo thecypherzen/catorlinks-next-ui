@@ -6,7 +6,7 @@ import { QuickActions } from "@/components/quickActions";
 
 export default function Home() {
   return (
-    <PageWrapper className="flex flex-col items-center justify-center min-h-[calc(100svh-100px)]">
+    <PageWrapper className="flex flex-col items-center justify-center min-h-[calc(100svh-100px)] py-6">
       <MainCarousel />
       <QuickActions />
     </PageWrapper>
