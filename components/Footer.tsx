@@ -1,3 +1,5 @@
+"use cient";
+
 import Link from "next/link";
 import { Logo } from "./Logo";
 import PageWrapper from "./PageWrapper";
@@ -13,7 +15,7 @@ export function Footer() {
           </div>
           <h2 className="text-2xl font-bold">Krea AI</h2>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row items-center gap-3">
           <h5 className="text-lg font-extrabold font-stretch-expanded">
             curated by
           </h5>

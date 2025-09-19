@@ -143,7 +143,14 @@ function CurrentUser() {
 }
 
 function NotificationAlert() {
-  const [ntfCount] = useState<number>(Math.floor(Math.random() * 10) % 2);
+  const [ntfCount, setNtfCount] = useState<number>(0);
+
+  useEffect(() => {
+    const c = Math.floor(Math.random() * 10) % 2;
+    setNtfCount(c);
+  }, []);
+
+  useEffect(() => {}, [ntfCount]);
   return (
     <div className="hover:bg-foreground/10 rounded-full bg-foreground/5 p-1 size-7 flex flex-col items-center justify-center text-foreground/80 hover:text-foreground relative">
       <Bell size="16px" />

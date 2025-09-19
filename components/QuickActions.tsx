@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ChevronDown,
   ChevronUp,
@@ -20,12 +22,14 @@ import {
   AppSectionHeader,
   AppSectionTitle,
 } from "./AppSection";
+import { UseIsBreakpoint } from "@/hooks/UseIsBreakpoint";
 
 export function QuickActionsSection() {
   const [open, setOpen] = useState<boolean>(false);
   const initCount = 4;
   const [visibleActions, setVisibleActions] = useState<number>(initCount);
   const { data: actions, backgrounds: bgs } = getQAData();
+  const useTwoGridCols = UseIsBreakpoint(515);
   const size = actions.length;
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export function QuickActionsSection() {
     }
   }, [open, size]);
 
-  useEffect(() => {}, [visibleActions]);
+  useEffect(() => {}, [visibleActions, useTwoGridCols]);
 
   return (
     <AppSection className="space-y-5 py-5 transition-discrete duration-1000">
@@ -58,7 +62,14 @@ export function QuickActionsSection() {
         </AppSectionControl>
       </AppSectionHeader>
       {/* Quick Actions */}
-      <AppSectionContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+      <AppSectionContent
+        className={cn(
+          "grid gap-2",
+          useTwoGridCols
+            ? "grid-cols-1"
+            : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        )}
+      >
         {actions
           .slice(0, visibleActions < size ? visibleActions : undefined)
           .map((action, index) => {

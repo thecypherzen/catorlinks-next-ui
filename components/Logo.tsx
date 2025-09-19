@@ -1,3 +1,5 @@
+"use client";
+
 import { UseTheme } from "@/hooks/UseTheme";
 import Image from "next/image";
 import { useEffect } from "react";

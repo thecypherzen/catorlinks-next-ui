@@ -1,3 +1,5 @@
+"use client";
+
 import { HandCoins, Scale } from "lucide-react";
 import {
   AppSection,
