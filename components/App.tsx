@@ -3,6 +3,7 @@
 import MainNav from "@/components/MainNav";
 import { ThemeProvider } from "@/hooks/UseTheme";
 import MenuNav from "./MenuNav";
+import { Footer } from "./Footer";
 
 export function App({ children }: { children: React.ReactNode }) {
   return (
@@ -10,6 +11,7 @@ export function App({ children }: { children: React.ReactNode }) {
       <MainNav />
       <MenuNav />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 }

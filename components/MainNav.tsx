@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { UseTheme } from "@/hooks/UseTheme";
 import { cn } from "@/lib/utils";
+import { Logo } from "./Logo";
 
 export default function MainNav() {
   const [open, setOpen] = useState<boolean>(false);
@@ -34,15 +35,7 @@ export default function MainNav() {
         {/* Left Nav Set */}
         <div className="flex items-center gap-6">
           {/* Logo */}
-          <div className="">
-            <Image
-              src="/logo.png"
-              width={18}
-              height={20}
-              alt="Logo"
-              className={theme === "dark" ? "invert" : ""}
-            />
-          </div>
+          <Logo />
           {/* Avatar */}
           <div className="flex items-center">
             <Avatar className="size-7">
