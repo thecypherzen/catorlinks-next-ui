@@ -21,9 +21,10 @@ export const ThemeProvider = ({
     if (!window) return;
     const storedTheme = window.localStorage.getItem(storeKey) as ThemeType;
     const detected =
-      storedTheme || window.matchMedia("(prefers-color-scheme: dark)").matches
+      storedTheme ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
-        : "light";
+        : "light");
     setTheme(detected);
   }, []);
 
