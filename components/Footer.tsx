@@ -2,8 +2,6 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import PageWrapper from "./PageWrapper";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
-import { Fragment } from "react";
 
 export function Footer() {
   return (

@@ -19,7 +19,6 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
-  onSlideChange?: (v: number) => void;
   handleScrollTo?: (v: number) => void;
 };
 
@@ -52,7 +51,6 @@ function Carousel({
   plugins,
   className,
   children,
-  onSlideChange,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(

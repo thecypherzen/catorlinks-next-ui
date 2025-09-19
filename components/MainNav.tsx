@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import PageWrapper from "./PageWrapper";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Popover,
   PopoverContent,
@@ -25,7 +24,7 @@ import { Logo } from "./Logo";
 
 export default function MainNav() {
   const [open, setOpen] = useState<boolean>(false);
-  const [ntfCount, _] = useState<number>(Math.floor(Math.random() * 10) % 2);
+  const [ntfCount] = useState<number>(Math.floor(Math.random() * 10) % 2);
   const { theme, toggleTheme } = UseTheme();
 
   useEffect(() => {}, [theme]);

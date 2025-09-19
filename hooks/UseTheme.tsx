@@ -7,26 +7,23 @@ export const ThemeContext = createContext<ThemeContextType>({
   toggleTheme: () => {},
 });
 
-const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "dark"
-  : "light";
-
 export const ThemeProvider = ({
   children,
   storeKey = "ctl-ui-theme",
 }: ThemeProviderPropsType) => {
-  const [theme, setTheme] = useState<ThemeType>(
-    (window.localStorage.getItem(storeKey) as ThemeType | null) || defaultTheme
-  );
+  const [theme, setTheme] = useState<ThemeType>("light");
 
   const toggleTheme = () => {
     setTheme((t) => (t === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
+    if (!window) return;
+    const storedTheme = window.localStorage.getItem(storeKey) as ThemeType;
     const detected =
-      (window.localStorage.getItem(storeKey) as ThemeType | null) ||
-      defaultTheme;
+      storedTheme || window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
     setTheme(detected);
   }, []);
 

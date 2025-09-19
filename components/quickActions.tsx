@@ -34,7 +34,7 @@ export function QuickActionsSection() {
     } else {
       setVisibleActions(initCount);
     }
-  }, [open]);
+  }, [open, size]);
 
   useEffect(() => {}, [visibleActions]);
 

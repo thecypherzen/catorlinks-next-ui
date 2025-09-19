@@ -19,7 +19,7 @@ export function AppSectionHeader({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <div className="flex justify-between" {...props} />;
+  return <div className={cn("flex justify-between", className)} {...props} />;
 }
 
 export function AppSectionTitle({

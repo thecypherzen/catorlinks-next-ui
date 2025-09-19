@@ -1,7 +1,6 @@
 import { HandCoins, Scale } from "lucide-react";
 import {
   AppSection,
-  AppSectionContent,
   AppSectionControl,
   AppSectionHeader,
   AppSectionTitle,
