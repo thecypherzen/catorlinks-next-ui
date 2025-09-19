@@ -69,7 +69,7 @@ export default function MainCarousel() {
         })}
       </CarouselContent>
       <div className="flex items-center mt-2 gap-2">
-        <CarouselDots />
+        <CarouselDots className="gap-3" />
         <div className="flex gap-2 w-1/11 justify-end pr-3">
           <CarouselPrevious className="relative translate-0 top-0 left-0" />
           <CarouselNext className="relative translate-0 top-0 left-0" />
@@ -81,49 +81,94 @@ export default function MainCarousel() {
 
 const CarouselData = [
   {
-    name: "LoremIpsum X.Y",
-    title: "Lorem ipsum dolor sit amet.",
-    shortDesc: "Lorem ipsum dolor sit",
+    name: "WAN 2.2",
+    title: "WAN 2.2 Image Generation",
+    shortDesc: "New Image Model",
     longDesc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor id voluptatibus tempore eaque repellat laborum nulla quisquam vitae impedit optio!",
+      "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt adherence and ultra-realistic textures.",
     image:
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
   },
   {
-    name: "LoremIpsum X.Y",
-    title: "Lorem ipsum dolor sit amet.",
-    shortDesc: "Lorem ipsum dolor sit",
+    name: "Open Source",
+    title: "FLUX.1 Krea",
+    shortDesc: "Open Source Model",
     longDesc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor id voluptatibus tempore eaque repellat laborum nulla quisquam vitae impedit optio!",
+      "We're making the weights to our FLUX.1 Krea model open-source. Download and run our model weights, read the technical report or generate with it in krea Image.",
     image:
       "https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
   },
   {
-    name: "LoremIpsum X.Y",
-    title: "Lorem ipsum dolor sit amet.",
-    shortDesc: "Lorem ipsum dolor sit",
+    name: "EchoText",
+    title: "EchoText AI Writer",
+    shortDesc: "AI Writing Assistant",
     longDesc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor id voluptatibus tempore eaque repellat laborum nulla quisquam vitae impedit optio!",
+      "Craft high-quality blog posts, product descriptions, and reports with EchoText. Designed for speed, clarity, and tone adaptation.",
     image:
       "https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
   },
   {
-    name: "LoremIpsum X.Y",
-    title: "Lorem ipsum dolor sit amet.",
-    shortDesc: "Lorem ipsum dolor sit",
+    name: "Visionary 5",
+    title: "Visionary 5 Video Gen",
+    shortDesc: "Next-Gen Video Model",
     longDesc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor id voluptatibus tempore eaque repellat laborum nulla quisquam vitae impedit optio!",
+      "Create cinematic video clips from text prompts. Visionary 5 delivers smooth motion, lifelike detail, and unmatched creative control.",
     image:
       "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
   },
   {
-    name: "LoremIpsum X.Y",
-    title: "Lorem ipsum dolor sit amet.",
-    shortDesc: "Lorem ipsum dolor sit",
+    name: "Atlas",
+    title: "Atlas Knowledge Engine",
+    shortDesc: "Enterprise AI Search",
     longDesc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor id voluptatibus tempore eaque repellat laborum nulla quisquam vitae impedit optio!",
+      "Atlas connects scattered company knowledge into a searchable, conversational assistant. Ideal for enterprises and teams of all sizes.",
     image:
       "https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
+  },
+  {
+    name: "Pulse 3",
+    title: "Pulse 3 Real-Time Analytics",
+    shortDesc: "Data in Motion",
+    longDesc:
+      "Streamline data monitoring with Pulse 3. Real-time dashboards and predictive alerts that adapt to fast-changing environments.",
+    image:
+      "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
+  },
+  {
+    name: "SynthVoice",
+    title: "SynthVoice Studio",
+    shortDesc: "Voice Generation",
+    longDesc:
+      "Generate humanlike voices in multiple languages and tones. From audiobooks to customer support bots, SynthVoice brings text to life.",
+    image:
+      "https://images.unsplash.com/photo-1677756119517-756a188d2d94?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
+  },
+  {
+    name: "NeuroSketch",
+    title: "NeuroSketch Design AI",
+    shortDesc: "AI for Creatives",
+    longDesc:
+      "Rapidly prototype UI, product sketches, and creative concepts. NeuroSketch combines AI precision with artistic freedom.",
+    image:
+      "https://images.unsplash.com/photo-1717501219604-cc1902b5d845?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
+  },
+  {
+    name: "CoreShield",
+    title: "CoreShield Security AI",
+    shortDesc: "AI Threat Detection",
+    longDesc:
+      "Protect your infrastructure with CoreShield. Detect anomalies, stop cyber attacks, and automate compliance with cutting-edge AI.",
+    image:
+      "https://images.unsplash.com/photo-1571757767119-68b8dbed8c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
+  },
+  {
+    name: "BioGen",
+    title: "BioGen Research Assistant",
+    shortDesc: "AI for Science",
+    longDesc:
+      "Accelerate research in biology and medicine. BioGen helps scientists generate hypotheses, analyze data, and model biological systems.",
+    image:
+      "https://images.unsplash.com/photo-1615946027884-5b6623222bf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&h=540",
   },
 ];
 

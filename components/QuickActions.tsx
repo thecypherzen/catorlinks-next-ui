@@ -117,56 +117,56 @@ const actionsData = [
     isNew: true,
     name: "Image",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Generate high-quality images instantly from simple text prompts. Ideal for creative projects, design prototypes, and marketing campaigns.",
     icon: Image,
   },
   {
     isNew: true,
     name: "Video",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Turn your ideas into cinematic videos in minutes. Create animations, ads, or short films with ease.",
     icon: Video,
   },
   {
     isNew: false,
     name: "Realtime",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Collaborate with AI models in real time. Perfect for live chat, instant feedback, and rapid prototyping.",
     icon: PenLine,
   },
   {
     isNew: true,
     name: "Enhancer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Improve the quality of your media with AI-powered upscaling, sharpening, and noise reduction. Works on both images and videos.",
     icon: WandSparkles,
   },
   {
     isNew: true,
     name: "Edit",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Seamlessly edit text, images, or video content with advanced AI tools. Replace, remove, or modify any element while keeping natural results.",
     icon: DraftingCompass,
   },
   {
     isNew: true,
     name: "Video Lipsync",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Synchronize spoken audio with video characters automatically. Great for dubbing, localization, and creative content.",
     icon: MicVocal,
   },
   {
     isNew: true,
     name: "Motion Transfer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Transfer movements from one video source to another. Animate avatars, characters, or objects with realistic motion capture precision.",
     icon: PersonStanding,
   },
   {
     isNew: false,
     name: "Train",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore aliquid, nobis quos porro voluptatem",
+      "Build and fine-tune your own AI models on custom datasets. Tailor them for specific tasks like chat, vision, or recommendations.",
     icon: Cpu,
   },
 ];
