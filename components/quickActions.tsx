@@ -13,8 +13,15 @@ import {
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import {
+  AppSection,
+  AppSectionContent,
+  AppSectionControl,
+  AppSectionHeader,
+  AppSectionTitle,
+} from "./AppSection";
 
-export function QuickActions() {
+export function QuickActionsSection() {
   const [open, setOpen] = useState<boolean>(false);
   const initCount = 4;
   const [visibleActions, setVisibleActions] = useState<number>(initCount);
@@ -32,24 +39,26 @@ export function QuickActions() {
   useEffect(() => {}, [visibleActions]);
 
   return (
-    <div className="space-y-5 py-5 transition-discrete duration-1000">
+    <AppSection className="space-y-5 py-5 transition-discrete duration-1000">
       {/* Controls */}
-      <div className="flex justify-between">
-        <h3 className="font-bold text-xl">Generate</h3>
-        <Button
-          variant="outline"
-          className="bg-transparent hover:bg-transparent border-none shadow-none flex gap-1 items-center text-blue-500 dark:text-blue-600 transition-all duration-300"
-          onClick={() => {
-            setOpen((prev) => !prev);
-          }}
-        >
-          {open ? <ChevronUp /> : <ChevronDown />}
-          &nbsp;Show&nbsp;
-          {open ? "less" : "all"}
-        </Button>
-      </div>
+      <AppSectionHeader>
+        <AppSectionTitle>Generate</AppSectionTitle>
+        <AppSectionControl>
+          <Button
+            variant="outline"
+            className="bg-transparent hover:bg-transparent border-none shadow-none flex gap-1 items-center text-blue-500 dark:text-blue-600 transition-all duration-300"
+            onClick={() => {
+              setOpen((prev) => !prev);
+            }}
+          >
+            {open ? <ChevronUp /> : <ChevronDown />}
+            &nbsp;Show&nbsp;
+            {open ? "less" : "all"}
+          </Button>
+        </AppSectionControl>
+      </AppSectionHeader>
       {/* Quick Actions */}
-      <div className="grid grid-cols-4 gap-2">
+      <AppSectionContent className="grid grid-cols-4 gap-2">
         {actions
           .slice(0, visibleActions < size ? visibleActions : undefined)
           .map((action, index) => {
@@ -81,16 +90,14 @@ export function QuickActions() {
                     </p>
                   </div>
                 </div>
-                <div className="w-1/6">
-                  <span className="bg-neutral-100 text-neutral-900 rounded-full text-xs px-3 py-1 inline-block hover:bg-neutral-300 hover:scale-[1.05] cursor-pointer transition-scale duration-200">
-                    Open
-                  </span>
+                <div className="w-1/6 flex flex-col items-center justify-center bg-neutral-100 text-neutral-900 dark:bg-foreground/10 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:border-1 dark:hover-border-neutral-300 rounded-full text-xs p-1   hover:scale-[1.05] cursor-pointer transition-scale duration-200">
+                  Open
                 </div>
               </div>
             );
           })}
-      </div>
-    </div>
+      </AppSectionContent>
+    </AppSection>
   );
 }
 
