@@ -246,7 +246,7 @@ function QuickNavButtons({ forMobile = false }: { forMobile?: boolean }) {
           "flex font-medium bg-foreground/5 active:bg-outline-1 active:outline-foreground/20 hover:bg-foreground/10 text-foreground/80  items-center cursor-pointer dark:hover:bg-foreground/20",
           forMobile
             ? "w-full justify-between px-3 py-2 h-auto"
-            : "justify-center gap-2 text-xs p-1 rounded-xl"
+            : "justify-center gap-2 text-xs px-4 rounded-full"
         )}
       >
         <div
@@ -263,7 +263,7 @@ function QuickNavButtons({ forMobile = false }: { forMobile?: boolean }) {
           "flex font-medium bg-foreground/5 hover:bg-foreground/10 text-foreground/80 active:bg-outline-1 active:outline-foreground/20 items-center cursor-pointer dark:hover:bg-foreground/20",
           forMobile
             ? "w-full justify-between px-3 py-2 h-auto"
-            : "justify-center gap-2 text-xs p-1 rounded-xl"
+            : "justify-center gap-2 text-xs px-4 rounded-full"
         )}
       >
         <div

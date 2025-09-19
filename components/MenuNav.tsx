@@ -30,7 +30,7 @@ export default function MenuNav() {
   return (
     <div
       className={cn(
-        "w-3/4 sm:max-w-6/11 md:max-w-[370px] left-1/7 sm:left-1/5 lg:left-1/8 xl:left-1/4 overflow-x-auto flex items-center gap-1 md:gap-2 px-3 py-2 rounded-xl fixed top-1 backdrop-blur-3xl backdrop-opacity-90 bg-linear-to-b from-transparent to-neutral-100 dark:to-neutral-800 scrollbar-hidden",
+        "w-3/4 sm:max-w-6/11 md:max-w-[370px] left-1/7 sm:left-1/5 lg:left-1/8 xl:left-1/4 overflow-x-auto flex items-center gap-1 md:gap-2 px-3 py-2 rounded-xl fixed top-1 backdrop-blur-3xl backdrop-opacity-100 bg-linear-to-b from-transparent via-30% to-neutral-100 dark:to-neutral-800 scrollbar-hidden border-[0.5px] border-white dark:border-neutral-700/50",
         isMobileView ? "md:left-1/4" : "md:left-1/6"
       )}
     >
