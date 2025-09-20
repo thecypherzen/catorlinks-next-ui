@@ -35,13 +35,20 @@ import {
 import MenuNav from "./MenuNav";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
+/**
+ * The App's main navigation bar. It consists of a number of
+ * other components.
+ * @function MainNav
+ * @returns {HTMLElement} The nav element
+ */
 export default function MainNav() {
   const { theme } = UseTheme();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const isMobile = UseIsBreakpoint(932);
 
-  useEffect(() => {}, [theme]);
-  useEffect(() => {}, [menuIsOpen]);
+  // respond to theme and menu state changes
+  useEffect(() => {}, [theme, menuIsOpen]);
+
   return (
     <nav className="flex flex-col justify-center bg-background/70 sticky top-0 backdrop-blur-3xl z-50 backdrop-opacity-100 py-2 lg:py-3">
       <PageWrapper className="h-full">
@@ -138,6 +145,11 @@ export default function MainNav() {
   );
 }
 
+/**
+ * Placeholder for an Avatar
+ * @function AvatarPlaceholder
+ * @returns {HTMLDivElement} a div element
+ */
 function AvatarPlaceholder() {
   const { theme } = UseTheme();
   return (
@@ -161,6 +173,12 @@ function AvatarPlaceholder() {
   );
 }
 
+/**
+ * Authenticated User's component
+ * @function CurrentUser
+ * @param {React.ComponentProps<div>} props  Div props
+ * @returns {HTMLDivElement} a div element
+ */
 function CurrentUser({ className, ...props }: React.ComponentProps<"div">) {
   const [open, setOpen] = useState<boolean>(false);
   const { theme } = UseTheme();
@@ -205,15 +223,26 @@ function CurrentUser({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * Notification Icon Component. Mocks situations when
+ * there are notifications and when there's none
+ * @function NotificationAlert
+ * @param {boolean} props.forMobile Specifies if component is being
+ * rendered for mobile view or desktop
+ * @returns {HTMLDivElement} a div element
+ */
 function NotificationAlert({ forMobile = false }: { forMobile?: boolean }) {
   const [ntfCount, setNtfCount] = useState<number>(0);
 
+  // get mock notification count on first mount
   useEffect(() => {
     const c = Math.floor(Math.random() * 10) % 2;
     setNtfCount(c);
   }, []);
 
+  // track dummy notification count
   useEffect(() => {}, [ntfCount]);
+
   return (
     <div
       className={cn(
@@ -233,6 +262,13 @@ function NotificationAlert({ forMobile = false }: { forMobile?: boolean }) {
   );
 }
 
+/**
+ * Navigation Buttons Component
+ * @function QuickNavButtons
+ * @param {boolean} props.forMobile Specifies if component is being
+ * rendered for mobile view or desktop
+ * @returns {HTMLDivElement}
+ */
 function QuickNavButtons({ forMobile = false }: { forMobile?: boolean }) {
   return (
     <div
@@ -279,6 +315,13 @@ function QuickNavButtons({ forMobile = false }: { forMobile?: boolean }) {
   );
 }
 
+/**
+ * Theme Toggle Component
+ * @function ThemeToggle
+ * @param {boolean} props.forMobile Specifies if component is being
+ * rendered for mobile view or desktop
+ * @returns {HTMLDivElement}
+ */
 function ThemeToggle({ forMobile = false }: { forMobile?: boolean }) {
   const { theme, toggleTheme } = UseTheme();
 

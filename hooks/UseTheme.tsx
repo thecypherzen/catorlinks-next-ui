@@ -2,11 +2,21 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
+/**
+ * The theme context
+ * @constant {ThemeContextType} ThemeContext
+ */
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
   toggleTheme: () => {},
 });
 
+/**
+ * Provider for app theme state
+ * @function ThemeProvider
+ * @param {ThemeProviderPropsType} props The accepted props during init
+ * @returns {React.Provider} - The Theme Context Provider
+ */
 export const ThemeProvider = ({
   children,
   storeKey = "ctl-ui-theme",
@@ -17,6 +27,7 @@ export const ThemeProvider = ({
     setTheme((t) => (t === "light" ? "dark" : "light"));
   };
 
+  // Detect theme on component load
   useEffect(() => {
     if (!window) return;
     const storedTheme = window.localStorage.getItem(storeKey) as ThemeType;
@@ -28,6 +39,7 @@ export const ThemeProvider = ({
     setTheme(detected);
   }, []);
 
+  // Update theme when it changes
   useEffect(() => {
     const root = window.document.documentElement;
     window.localStorage.setItem(storeKey, theme);
@@ -42,6 +54,11 @@ export const ThemeProvider = ({
   );
 };
 
+/**
+ * Custom Hook to used to access theme anywhere in app
+ * @function UseTheme
+ * @returns {ThemeContextType} The theme context
+ */
 export const UseTheme = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {

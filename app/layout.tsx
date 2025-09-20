@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { App } from "@/components/App";
+import { ThemeProvider } from "@/hooks/UseTheme";
+import MainNav from "@/components/MainNav";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +20,12 @@ export const metadata: Metadata = {
   description: "A simple NextJS UI implementation",
 };
 
+/**
+ * App's layout
+ * @function RootLayout
+ * @param {object} props.children Children to be rendered
+ * @returns {HTMLBaseElement} The Root
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +36,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <App>{children}</App>
+        <ThemeProvider>
+          <MainNav />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

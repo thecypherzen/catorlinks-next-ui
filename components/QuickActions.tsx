@@ -24,6 +24,13 @@ import {
 } from "./AppSection";
 import { UseIsBreakpoint } from "@/hooks/UseIsBreakpoint";
 
+/**
+ * Quick Actions Component. Uses a custom AppSection
+ * Generic component so life is easier and app aesthetics are
+ * maintained.
+ * @function QuickActionsSection
+ * @returns {HTMLDivElement} The rendered component
+ */
 export function QuickActionsSection() {
   const [open, setOpen] = useState<boolean>(false);
   const initCount = 4;
@@ -32,6 +39,8 @@ export function QuickActionsSection() {
   const useTwoGridCols = UseIsBreakpoint(515);
   const size = actions.length;
 
+  // update values that are used to implement `show/hide` effect of the
+  // section control
   useEffect(() => {
     if (open) {
       setVisibleActions(size);
@@ -40,13 +49,15 @@ export function QuickActionsSection() {
     }
   }, [open, size]);
 
+  // re-render when they change
   useEffect(() => {}, [visibleActions, useTwoGridCols]);
 
   return (
     <AppSection className="space-y-5 py-5 transition-discrete duration-1000">
-      {/* Controls */}
+      {/* Header */}
       <AppSectionHeader>
         <AppSectionTitle>Generate</AppSectionTitle>
+        {/* Show/Hide Button control */}
         <AppSectionControl>
           <Button
             variant="outline"
@@ -112,6 +123,10 @@ export function QuickActionsSection() {
   );
 }
 
+/**
+ * Mock QuickActions data
+ * @constant {Array<typeof actionsData>} actionsData
+ */
 const actionsData = [
   {
     isNew: true,
@@ -171,6 +186,11 @@ const actionsData = [
   },
 ];
 
+/**
+ * List of background gradient stops for corresponding
+ * `actionData`
+ * @constant {string[]} backgrounds
+ */
 const backgrounds = [
   "from-slate-700 to-slate-300",
   "from-yellow-500 to-orange-600",
@@ -181,6 +201,13 @@ const backgrounds = [
   "from-neutral-700 to-black",
   "from-teal-700 to-yellow-300",
 ];
+
+/**
+ * Serves the actions data.
+ * @function getQAData
+ * @returns {Object<{data: typeof actionsData; backgrounds: string[]}>} An object
+ * containing the actiosnData and their background gradient stops
+ */
 function getQAData() {
   return { data: actionsData, backgrounds };
 }

@@ -2,6 +2,14 @@
 
 import { cn } from "@/lib/utils";
 
+/**
+ * A custom component that standardises an app section, providing
+ * All needed elments with consistent styling. Flexible enough to
+ * allow dynamic data and specific custom styles.
+ * @function AppSection
+ * @param { React.ComponentProps<div> } props Props passed
+ * @returns {HTMLDivElement} The AppSection Wrapper
+ */
 export function AppSection({
   className,
   ...props
@@ -17,6 +25,12 @@ export function AppSection({
   );
 }
 
+/**
+ * AppSection Header Component
+ * @function AppSectionHeader
+ * @param { React.ComponentProps<div> } props Props passed
+ * @returns {HTMLDivElement} The AppSection Wrapper
+ */
 export function AppSectionHeader({
   className,
   ...props
@@ -24,6 +38,12 @@ export function AppSectionHeader({
   return <div className={cn("flex justify-between", className)} {...props} />;
 }
 
+/**
+ * AppSection Header Title Component
+ * @function AppSectionTitle
+ * @param { React.ComponentProps<div> } props Props passed
+ * @returns {HTMLDivElement} The AppSection Wrapper
+ */
 export function AppSectionTitle({
   className,
   ...props
@@ -31,6 +51,14 @@ export function AppSectionTitle({
   return <h3 className={cn("font-bold text-xl", className)} {...props} />;
 }
 
+/**
+ * Every AppSectionHeader has some extra element to the right. These
+ * could be buttons, badges, etc. This renders those `children` but
+ * keeps the styling of that far right consistent.
+ * @function AppSectionControl
+ * @param { React.ComponentProps<div> } props Props passed
+ * @returns {HTMLDivElement} The AppSection Wrapper
+ */
 export function AppSectionControl({
   className,
   ...props
@@ -43,6 +71,12 @@ export function AppSectionControl({
   );
 }
 
+/**
+ * AppSection Content Component
+ * @function AppSectionContent
+ * @param { React.ComponentProps<div> } props Props passed
+ * @returns {HTMLDivElement} The AppSection Wrapper
+ */
 export function AppSectionContent({
   className,
   ...props

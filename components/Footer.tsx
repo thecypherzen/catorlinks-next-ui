@@ -5,6 +5,11 @@ import { Logo } from "./Logo";
 import PageWrapper from "./PageWrapper";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
+/**
+ * The Footer component
+ * @function Footer
+ * @returns {HTMLElement} The footer
+ */
 export function Footer() {
   return (
     <footer className="bg-neutral-950 dark:bg-neutral-900 text-neutral-100 dark:text-neutral-300">

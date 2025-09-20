@@ -13,6 +13,12 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
+/**
+ * The elements that constitute the tools menu nav
+ * I called it `MenuNav`, but I think a better name
+ * should have been `Toolbar`
+ * @constant navItems
+ */
 const navItems = [
   { icon: House, name: "house" },
   { icon: Image, name: "image" },
@@ -22,11 +28,19 @@ const navItems = [
   { icon: DraftingCompass, name: "compass" },
   { icon: Folder, name: "folder" },
 ];
+
+/**
+ * The Tool Menu Component
+ * @function MenuNav
+ * @returns {HTMLDivElement} A `div` element that renders the `toolbox`
+ */
 export default function MenuNav() {
   const [active, setActive] = useState<string | undefined>(undefined);
   const isMobileView = UseIsBreakpoint(932);
 
+  // respond to breakpoint changes
   useEffect(() => {}, [isMobileView]);
+
   return (
     <div
       className={cn(

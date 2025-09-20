@@ -11,7 +11,14 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import React from "react";
 
+/**
+ * Home page carousel component. Uses mock static
+ * data.
+ * @function MainCarousel
+ * @returns {HTMLDivElement} The carousel
+ */
 export default function MainCarousel() {
   const data = getCarouselData();
 
@@ -79,6 +86,10 @@ export default function MainCarousel() {
   );
 }
 
+/**
+ * The Carousel dummy data
+ * @constant {Array<typeof CarsouselData>} CarouselData
+ */
 const CarouselData = [
   {
     name: "WAN 2.2",
@@ -172,6 +183,12 @@ const CarouselData = [
   },
 ];
 
+/**
+ * Basically a getter of carousel data...we'll use a function in
+ * real life yea? ...um like a Tanstack Mutation or similar...
+ * @function getCarouselData
+ * @returns {Array<typeof CarouselData>} Array of carousel objects
+ */
 function getCarouselData() {
   return CarouselData;
 }
