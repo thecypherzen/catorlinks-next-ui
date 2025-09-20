@@ -4,10 +4,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Technologies
 
-[x] - NextJS
-[x] - TypeScript
-[x] - React
-[x] - Shadcn/ui
+- [x] NextJS
+- [x] TypeScript
+- [x] React
+- [x] Shadcn/ui
 
 ## Live Preview
 
@@ -15,7 +15,7 @@ View the live app [here](https://catorlinks-ai-william-inyams-projects.vercel.ap
 
 ## Contact
 
-[x] - [Email](mailto:sw.inyam@outlook.com)
-[x] - [X](https://x.com/williamInyam)
+- [x] [Email](mailto:sw.inyam@outlook.com)
+- [x] [X](https://x.com/williamInyam)
 
 ✌🏼🏅
