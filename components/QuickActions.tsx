@@ -36,7 +36,7 @@ export function QuickActionsSection() {
   const initCount = 4;
   const [visibleActions, setVisibleActions] = useState<number>(initCount);
   const { data: actions, backgrounds: bgs } = getQAData();
-  const useTwoGridCols = UseIsBreakpoint(515);
+  const useTwoGridCols = UseIsBreakpoint(572);
   const size = actions.length;
 
   // update values that are used to implement `show/hide` effect of the
@@ -112,7 +112,7 @@ export function QuickActionsSection() {
                     </p>
                   </div>
                 </div>
-                <div className="w-1/6 flex flex-col items-center justify-center bg-neutral-100 text-neutral-900 dark:bg-foreground/10 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:border-1 dark:hover-border-neutral-300 rounded-full text-xs p-1   hover:scale-[1.05] cursor-pointer transition-scale duration-200">
+                <div className="flex flex-col items-center justify-center bg-neutral-100 text-neutral-900 dark:bg-foreground/10 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:border-1 dark:hover-border-neutral-300 rounded-full text-xs px-3 py-1   hover:scale-[1.05] cursor-pointer transition-scale duration-200">
                   Open
                 </div>
               </div>
